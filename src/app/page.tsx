@@ -1,8 +1,11 @@
+import { Categories } from '@/components'
 import React from 'react'
 
 const Home = () => {
   return (
-    <div>youtube clone...</div>
+    <div>
+      <Categories />
+    </div>
   )
 }
 
