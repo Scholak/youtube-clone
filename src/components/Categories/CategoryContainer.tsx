@@ -9,7 +9,7 @@ const CategoryContainer = async () => {
   const categories = response.data.categories
 
   return (
-		<div className='flex gap-4 overflow-x-auto p-2 sm:px-none'>
+		<div className='w-full flex gap-4 overflow-x-auto p-2 sm:px-none'>
       <div className='sm:hidden'>
         <ExploreButton />
       </div>

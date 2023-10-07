@@ -14,3 +14,11 @@
   background-clip: content-box;
   background-color: #bcbcbc;
 }
+
+#sidebar::-webkit-scrollbar {
+  width: 0;
+}
+
+#sidebar:hover::-webkit-scrollbar {
+  width: 16px;
+}
