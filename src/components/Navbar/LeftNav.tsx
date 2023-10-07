@@ -8,8 +8,8 @@ import Link from 'next/link'
 
 const LeftNav = () => {
   return (
-		<div className='flex items-center gap-4'>
-			<HiMenu color='white' className='text-2xl cursor-pointer' />
+		<div className='flex items-center gap-4 mr-auto sm:mr-0'>
+			<HiMenu color='white' className='text-2xl cursor-pointer hidden sm:block' />
 			<Link href='/'>
 				<Image src={youtubeLogo} alt='youtube logo' width={90} height={40} />
 			</Link>
