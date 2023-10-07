@@ -22,8 +22,8 @@ const SideLink = ({ text, Icon, svg, img, href, isActive }: SideLinkProps) => {
 			>
 				{Icon && <Icon />}
 				{svg && <span className='w-6'>{svg}</span>}
-				{img && <Image src={img} alt='icon' width={30} height={30} className='rounded-full' />}
-				{text}
+				{img && <Image src={img} alt='icon' width={30} height={30} className='rounded-full w-7 h-7' />}
+				<span className='text-[14px]'>{text}</span>
 			</Link>
 		</li>
 	)

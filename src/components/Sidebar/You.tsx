@@ -1,8 +1,13 @@
 import React from 'react'
 import { FaChevronRight } from 'react-icons/fa'
 import SideLink from './SideLink'
+import axios from 'axios'
+import Playlists from './Playlists'
 
-const You = () => {
+const You = async () => {
+	const response = await axios.get(`${process.env.APP_URL}/api/playlists`)
+	const playlists = response.data.playlists
+
   return (
 		<div className='px-3'>
 			<div className='flex items-center gap-2 py-2 px-4 rounded-lg text-white hover:bg-light-gray cursor-pointer'>
@@ -59,22 +64,7 @@ const You = () => {
 						</svg>
 					}
 				/>
-				<SideLink
-					href='/'
-					text='Daha Fazla Göster'
-					isActive={false}
-					svg={
-						<svg
-							height='24'
-							viewBox='0 0 24 24'
-							width='24'
-							focusable='false'
-              fill='#fff'
-						>
-							<path d='m18 9.28-6.35 6.35-6.37-6.35.72-.71 5.64 5.65 5.65-5.65z'></path>
-						</svg>
-					}
-				/>
+				<Playlists playlists={playlists} />
 			</ul>
 		</div>
 	)
