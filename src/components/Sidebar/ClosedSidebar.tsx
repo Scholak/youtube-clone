@@ -1,9 +1,13 @@
 import Link from 'next/link'
 import React from 'react'
 
-const ClosedSidebar = () => {
+interface ClosedSidebarProps {
+	className?: string
+}
+
+const ClosedSidebar = ({className}: ClosedSidebarProps) => {
   return (
-		<nav className='fixed top-14 left-0 bottom-0 w-[60px]'>
+		<nav className={`fixed top-14 left-0 bottom-0 w-[60px] ${className}`}>
 			<ul className='mt-4 text-[10px] text-white'>
 				<li>
 					<Link

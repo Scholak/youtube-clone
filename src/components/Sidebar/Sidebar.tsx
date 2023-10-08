@@ -17,27 +17,29 @@ const Sidebar = () => {
 
   return (
 		<>
-			{toggleSidebar ? (
-				<ClosedSidebar />
-			) : (
-				<nav className='fixed top-14 bottom-0 left-0 w-60 text-white overflow-y-scroll overflow-x-hidden' id='sidebar'>
-					<div className='w-60 p-2'>
-						<UpperLinks />
-						<div className='w-full h-px bg-light-gray my-3'></div>
-						<You />
-						<div className='w-full h-px bg-light-gray my-3'></div>
-						<Subscriptions />
-						<div className='w-full h-px bg-light-gray my-3'></div>
-						<Explore />
-						<div className='w-full h-px bg-light-gray my-3'></div>
-						<More />
-						<div className='w-full h-px bg-light-gray my-3'></div>
-						<LowerLinks />
-						<div className='w-full h-px bg-light-gray my-3'></div>
-						<Terms />
-					</div>
-				</nav>
-			)}
+			<ClosedSidebar className={toggleSidebar ? 'xl:fixed' : 'xl:hidden'} />
+			<nav
+				className={`fixed top-14 bottom-0 left-0 w-60 text-white overflow-y-scroll transition duration-300 overflow-x-hidden bg-dark-gray z-50 xl:translate-x-0 ${
+					toggleSidebar ? 'xl:hidden translate-x-0' : 'xl:fixed -translate-x-60'
+				}`}
+				id='sidebar'
+			>
+				<div className='w-60 p-2'>
+					<UpperLinks />
+					<div className='w-full h-px bg-light-gray my-3'></div>
+					<You />
+					<div className='w-full h-px bg-light-gray my-3'></div>
+					<Subscriptions />
+					<div className='w-full h-px bg-light-gray my-3'></div>
+					<Explore />
+					<div className='w-full h-px bg-light-gray my-3'></div>
+					<More />
+					<div className='w-full h-px bg-light-gray my-3'></div>
+					<LowerLinks />
+					<div className='w-full h-px bg-light-gray my-3'></div>
+					<Terms />
+				</div>
+			</nav>
 		</>
 	)
 }
