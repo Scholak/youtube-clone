@@ -16,6 +16,7 @@ const Playlists = ({ playlists }: IPlaylistProps) => {
 			{isActive &&
 				playlists.map((playlist: IPlaylist) => (
 					<SideLink
+					key={playlist.id}
 						href='/'
 						text={playlist.snippet.title}
 						isActive={false}

@@ -19,6 +19,7 @@ const Subscriptions = () => {
 			<ul>
 				{subscriptions?.map((subscription: any) => (
 					<SideLink
+					key={subscription.id}
 						href='/'
 						text={subscription.snippet.title}
 						isActive={false}

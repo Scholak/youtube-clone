@@ -14,7 +14,7 @@ const CategoryContainer = async () => {
         <ExploreButton />
       </div>
 			{categories.map((category: ICategory) => (
-				<Category category={category} />
+				<Category key={category.id} category={category} />
 			))}
 		</div>
 	)
