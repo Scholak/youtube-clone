@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
 		<html lang='en'>
-			<body className={`${roboto.className} bg-dark-gray overflow-hidden`} suppressHydrationWarning={true}>
+			<body className={`${roboto.className} bg-dark-gray overflow-x-hidden`} suppressHydrationWarning={true}>
 				<RootProvider>
 					<Navbar />
 					<main>{children}</main>
