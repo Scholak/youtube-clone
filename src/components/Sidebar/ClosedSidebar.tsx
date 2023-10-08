@@ -11,7 +11,7 @@ const ClosedSidebar = () => {
 						className='flex flex-col items-center gap-2 py-3 px-2 rounded-lg text-white whitespace-nowrap text-ellipsis overflow-hidden hover:bg-light-gray'
 					>
 						<svg
-							enable-background='new 0 0 24 24'
+							enableBackground='new 0 0 24 24'
 							height='24'
 							viewBox='0 0 24 24'
 							width='24'
@@ -42,7 +42,7 @@ const ClosedSidebar = () => {
 						className='flex flex-col items-center gap-2 py-3 px-2 rounded-lg text-white whitespace-nowrap text-ellipsis overflow-hidden hover:bg-light-gray'
 					>
 						<svg
-							enable-background='new 0 0 24 24'
+							enableBackground='new 0 0 24 24'
 							height='24'
 							viewBox='0 0 24 24'
 							width='24'
@@ -60,7 +60,7 @@ const ClosedSidebar = () => {
 						className='flex flex-col items-center gap-2 py-3 px-2 rounded-lg text-white whitespace-nowrap text-ellipsis overflow-hidden hover:bg-light-gray'
 					>
 						<svg
-							enable-background='new 0 0 24 24'
+							enableBackground='new 0 0 24 24'
 							height='24'
 							viewBox='0 0 24 24'
 							width='24'
