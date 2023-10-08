@@ -15,18 +15,20 @@ import ClosedSidebar from './ClosedSidebar'
 const Sidebar = () => {
 	const toggleSidebar = useSelector((state: RootState) => state.sidebarToggle.toggle)
 
+	console.log(toggleSidebar)
+
   return (
 		<>
 			{toggleSidebar ? (
 				<ClosedSidebar />
 			) : (
-				<nav className='w-60 text-white overflow-y-scroll overflow-x-hidden' id='sidebar'>
+				<nav className='fixed top-14 bottom-0 left-0 w-60 text-white overflow-y-scroll overflow-x-hidden' id='sidebar'>
 					<div className='w-60 p-2'>
 						<UpperLinks />
 						<div className='w-full h-px bg-light-gray my-3'></div>
-						{/* <You /> */}
+						<You />
 						<div className='w-full h-px bg-light-gray my-3'></div>
-						{/* <Subscriptions /> */}
+						<Subscriptions />
 						<div className='w-full h-px bg-light-gray my-3'></div>
 						<Explore />
 						<div className='w-full h-px bg-light-gray my-3'></div>

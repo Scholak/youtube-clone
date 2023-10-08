@@ -5,7 +5,7 @@ import axios from 'axios'
 import ExploreButton from './ExploreButton'
 
 const CategoryContainer = async () => {
-  const response = await axios.get(`${process.env.APP_URL}/api/categories`)
+  const response = await axios.get(`http://localhost:3000/api/categories`)
   const categories = response.data.categories
 
   return (

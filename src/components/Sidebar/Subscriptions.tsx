@@ -1,16 +1,23 @@
+'use client'
+
 import axios from 'axios'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import SideLink from './SideLink'
 
-const Subscriptions = async () => {
-	const response = await axios.get(`${process.env.APP_URL}/api/subscriptions`)
-	const subscriptions = response.data.subscriptions
+const Subscriptions = () => {
+	const [subscriptions, setSubscriptions] = useState<any[]>([])
+
+	useEffect(() => {
+		axios.get(`http://localhost:3000/api/subscriptions`).then((res: any) => {
+			setSubscriptions(res.data.subscriptions)
+		})
+	}, [])
 
   return (
 		<div className='px-3'>
 			<p className='mb-2 font-medium'>Abonelikler</p>
 			<ul>
-				{subscriptions.map((subscription: any) => (
+				{subscriptions?.map((subscription: any) => (
 					<SideLink
 						href='/'
 						text={subscription.snippet.title}

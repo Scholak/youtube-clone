@@ -1,13 +1,11 @@
-import { Categories, Sidebar } from '@/components'
+import { Sidebar, HomeContent } from '@/components'
 import React from 'react'
 
 const Home = () => {
   return (
-		<div className='w-screen flex overflow-hidden'>
+		<div className='flex'>
 			<Sidebar />
-			<div className='pl-4 ml-[240px] w-[calc(100vw-240px)]'>
-				<Categories />
-			</div>
+			<HomeContent />
 		</div>
 	)
 }

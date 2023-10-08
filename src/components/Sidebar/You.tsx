@@ -1,12 +1,20 @@
-import React from 'react'
+'use client'
+
+import React, { useEffect, useState } from 'react'
 import { FaChevronRight } from 'react-icons/fa'
 import SideLink from './SideLink'
 import axios from 'axios'
 import Playlists from './Playlists'
+import { IPlaylist } from '@/types/playlistTypes'
 
-const You = async () => {
-	const response = await axios.get(`${process.env.APP_URL}/api/playlists`)
-	const playlists = response.data.playlists
+const You = () => {
+	const [playlists, setPlaylists] = useState<IPlaylist[]>([])
+
+	useEffect(() => {
+		axios.get(`http://localhost:3000/api/playlists`).then((res: any) => {
+			setPlaylists(res.data.playlists)
+		})
+	}, [])
 
   return (
 		<div className='px-3'>
@@ -64,7 +72,7 @@ const You = async () => {
 						</svg>
 					}
 				/>
-				<Playlists playlists={playlists} />
+				{playlists && <Playlists playlists={playlists} />}
 			</ul>
 		</div>
 	)

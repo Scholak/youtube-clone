@@ -3,7 +3,7 @@ import React from 'react'
 
 const ClosedSidebar = () => {
   return (
-		<nav className=''>
+		<nav className='fixed top-14 left-0 bottom-0 w-[60px]'>
 			<ul className='mt-4 text-[10px] text-white'>
 				<li>
 					<Link
