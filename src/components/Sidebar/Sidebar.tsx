@@ -15,8 +15,6 @@ import ClosedSidebar from './ClosedSidebar'
 const Sidebar = () => {
 	const toggleSidebar = useSelector((state: RootState) => state.sidebarToggle.toggle)
 
-	console.log(toggleSidebar)
-
   return (
 		<>
 			{toggleSidebar ? (
