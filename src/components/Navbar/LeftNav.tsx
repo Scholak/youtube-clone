@@ -17,8 +17,8 @@ const LeftNav = () => {
 
   return (
 		<div className='flex items-center gap-4 mr-auto sm:mr-0'>
-			<HiMenu color='white' className='text-2xl cursor-pointer' onClick={handleToggleSidebar} />
-			<Link href='/' className='select-none'>
+			<HiMenu color='white' className='shrink-0 text-2xl cursor-pointer' onClick={handleToggleSidebar} />
+			<Link href='/' className='shrink-0 select-none'>
 				<Image src={youtubeLogo} alt='youtube logo' width={90} height={40} priority />
 			</Link>
 		</div>

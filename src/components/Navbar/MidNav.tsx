@@ -14,7 +14,7 @@ const MidNav = () => {
 				<div className='flex sm:flex-1'>
 					<input
 						type='text'
-						className='flex-1 sm:w-96 px-4 text-white bg-mid-dark-gray rounded-s-[40px] hidden sm:block focus:outline-none'
+						className='flex-1 px-4 text-white bg-mid-dark-gray rounded-s-[40px] hidden focus:outline-none sm:block md:w-96'
 						placeholder='Ara'
 					/>
 					<button
