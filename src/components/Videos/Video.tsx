@@ -9,11 +9,11 @@ interface VideoProps {
 const Video = ({video}: VideoProps) => {
   return (
 		<div>
-			<div className='w-full aspect-video rounded overflow-hidden'>
+			<div className='w-full mb-2 aspect-video rounded-lg overflow-hidden'>
 				<Image src={video.thumbnail} alt='video thumbnail' width={640} height={480} className='w-full h-full' />
 			</div>
 			<div className='flex items-start gap-2'>
-				<div className='w-10 h-10 rounded-full overflow-hidden'>
+				<div className='shrink-0 w-10 h-10 rounded-full overflow-hidden'>
 					<Image
 						src={video.channel.thumbnail}
 						alt='channel thumbnail'
