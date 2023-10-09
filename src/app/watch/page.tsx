@@ -11,10 +11,9 @@ interface WatchProps {
 
 export async function generateMetadata({searchParams}: WatchProps) {
   const response = await axios.get(`http://localhost:3000/api/videos/${searchParams.v}`)
-  
 
   return {
-    title: searchParams.v
+    title: response.data.video.detail.title
   }
 }
 
