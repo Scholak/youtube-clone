@@ -43,12 +43,12 @@ const VideoContainer = () => {
   }, [])
 
   return (
-    <div className='grid gap-6 text-white md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'>
-      {videos.map((video: IVideo) => (
-        <Video key={video.id} video={video} />
-      ))}
-      {videos.length && !isFetching && <div ref={ref}></div>}
-    </div>
+		<div className='grid gap-6 text-white md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'>
+			{videos.map((video: IVideo) => (
+				<Video key={video.id} video={video} />
+			))}
+			<span className='text-transparent'>{videos.length && !isFetching && <div ref={ref}></div>}</span>
+		</div>
 	)
 }
 
