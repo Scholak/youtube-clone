@@ -1,5 +1,6 @@
 import { teaser } from '@/lib/teaser'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 interface RelatedVideosProps {
@@ -10,9 +11,15 @@ const RelatedVideos = ({ data }: RelatedVideosProps) => {
   return (
 		<div className='grid gap-2'>
 			{data.video.relatedVideos.data.map((video: any) => (
-				<div key={video.id} className='w-[400px] flex gap-4'>
+				<Link key={video.id} href={{ pathname: '/watch', query: { v: video.id } }} className='w-[400px] flex gap-4'>
 					<div className='shrink-0 rounded-xl overflow-hidden w-[168px] h-[96px]'>
-						<Image src={video.thumbnail} alt='video thumbnail' width={200} height={100} className='w-full h-full object-cover' />
+						<Image
+							src={video.thumbnail}
+							alt='video thumbnail'
+							width={200}
+							height={100}
+							className='w-full h-full object-cover'
+						/>
 					</div>
 					<div>
 						<p className='mb-2 font-medium text-sm'>{teaser(video.title)}</p>
@@ -23,7 +30,7 @@ const RelatedVideos = ({ data }: RelatedVideosProps) => {
 							<span>{video.publishedAt}</span>
 						</p>
 					</div>
-				</div>
+				</Link>
 			))}
 		</div>
 	)
