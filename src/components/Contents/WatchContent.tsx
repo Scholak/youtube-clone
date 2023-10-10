@@ -7,8 +7,8 @@ interface WatchContentProps {
 
 const WatchContent = ({ videoDetail }: WatchContentProps) => {
 	return (
-		<div className='mt-14 p-8 text-white'>
-			<div>
+		<div className='flex gap-6 mt-14 p-8 text-white'>
+			<div className='shrink-1 w-full'>
 				<VideoDetail data={videoDetail} />
 				<Comments data={videoDetail} />
 			</div>

@@ -8,7 +8,7 @@ interface VideoDetailProps {
 const VideoDetail = ({ data }: VideoDetailProps) => {
 	return (
 		<div>
-			<div dangerouslySetInnerHTML={{ __html: data.video.detail.player }} className='rounded-xl overflow-hidden'></div>
+			<div dangerouslySetInnerHTML={{ __html: data.video.detail.player }} className='rounded-xl overflow-hidden aspect-video' id='videoDetailPlayer'></div>
 			<p className='my-2 text-2xl font-semibold'>{data.video.detail.title}</p>
 			<div className='flex items-center justify-between'>
 				<div className='h-10 flex items-start gap-3'>
