@@ -15,7 +15,7 @@ const VideoDetail = ({ data }: VideoDetailProps) => {
 				id='videoDetailPlayer'
 			></div>
 			<p className='my-2 text-2xl font-semibold'>{data.video.detail.title}</p>
-			<div className='mb-4 flex items-center justify-between'>
+			<div className='mb-4 flex flex-col gap-4 justify-between lg:flex-row lg:items-center'>
 				<div className='h-10 flex items-start gap-3'>
 					<Image
 						src={data.video.channel.thumbnail}
@@ -36,7 +36,7 @@ const VideoDetail = ({ data }: VideoDetailProps) => {
 					<div className='flex items-center gap-3 h-10 shrink-0 px-4 rounded-full bg-light-gray text-white'>
 						<button className='flex items-center gap-1'>
 							<svg
-								enable-background='new 0 0 24 24'
+								enableBackground='new 0 0 24 24'
 								height='24'
 								viewBox='0 0 24 24'
 								width='24'
