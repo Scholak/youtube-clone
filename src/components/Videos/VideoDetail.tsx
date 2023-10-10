@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
+import VideoDescription from './VideoDescription'
 
 interface VideoDetailProps {
 	data: any
@@ -8,9 +9,13 @@ interface VideoDetailProps {
 const VideoDetail = ({ data }: VideoDetailProps) => {
 	return (
 		<div>
-			<div dangerouslySetInnerHTML={{ __html: data.video.detail.player }} className='rounded-xl overflow-hidden aspect-video' id='videoDetailPlayer'></div>
+			<div
+				dangerouslySetInnerHTML={{ __html: data.video.detail.player }}
+				className='rounded-xl overflow-hidden aspect-video'
+				id='videoDetailPlayer'
+			></div>
 			<p className='my-2 text-2xl font-semibold'>{data.video.detail.title}</p>
-			<div className='flex items-center justify-between'>
+			<div className='mb-4 flex items-center justify-between'>
 				<div className='h-10 flex items-start gap-3'>
 					<Image
 						src={data.video.channel.thumbnail}
@@ -63,18 +68,13 @@ const VideoDetail = ({ data }: VideoDetailProps) => {
 						<span>Kaydet</span>
 					</button>
 					<button className='flex items-center justify-center h-10 w-10 shrink-0 rounded-full bg-light-gray text-white'>
-						<svg
-							height='24'
-							viewBox='0 0 24 24'
-							width='24'
-							focusable='false'
-							fill='#fff'
-						>
+						<svg height='24' viewBox='0 0 24 24' width='24' focusable='false' fill='#fff'>
 							<path d='M7.5 12c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5.67-1.5 1.5-1.5 1.5.67 1.5 1.5zm4.5-1.5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zm6 0c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z'></path>
 						</svg>
 					</button>
 				</div>
 			</div>
+			<VideoDescription video={data.video} />
 		</div>
 	)
 }
