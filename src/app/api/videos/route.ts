@@ -1,5 +1,6 @@
 import { api } from "@/lib/api";
 import { dateFormatter } from "@/lib/dateFormatter";
+import { teaser } from "@/lib/teaser";
 import { viewFormatter } from "@/lib/viewFormatter";
 import { IVideoResponse } from '@/types/videoTypes'
 import { NextRequest } from "next/server";
@@ -34,7 +35,7 @@ export async function GET(request: NextRequest) {
 
 			return {
 				id: video.id,
-				title: video.snippet.title,
+				title: teaser(video.snippet.title),
 				publishedAt: dateFormatter(video.snippet.publishedAt),
 				thumbnail: video.snippet.thumbnails.standard.url,
 				viewCount: viewFormatter.format(Number(video.statistics.viewCount)),
