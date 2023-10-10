@@ -30,6 +30,8 @@ export async function GET(request: NextRequest) {
 		const channels = channelResponse.data.items
 
 		const videos = videoResponse.data.items.map((video: IVideoResponse, idx: number) => {
+			const channel = channels.filter((channel: any) => channel.id === video.snippet.channelId)[0]
+
 			return {
 				id: video.id,
 				title: video.snippet.title,
@@ -37,8 +39,8 @@ export async function GET(request: NextRequest) {
 				thumbnail: video.snippet.thumbnails.standard.url,
 				viewCount: viewFormatter.format(Number(video.statistics.viewCount)),
 				channel: {
-					title: channels[idx].snippet.title,
-					thumbnail: channels[idx].snippet.thumbnails.default.url,
+					title: channel.snippet.title,
+					thumbnail: channel.snippet.thumbnails.default.url,
 				},
 			}
 		})
