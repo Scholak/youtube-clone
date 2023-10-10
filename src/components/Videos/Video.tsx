@@ -1,5 +1,6 @@
 import { IVideo } from '@/types/videoTypes'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 interface VideoProps {
@@ -8,7 +9,7 @@ interface VideoProps {
 
 const Video = ({video}: VideoProps) => {
   return (
-		<div>
+		<Link href={{pathname: '/watch', query: { v: video.id }}}>
 			<div className='w-full mb-2 aspect-video rounded-lg overflow-hidden'>
 				<Image
 					src={video.thumbnail}
@@ -38,7 +39,7 @@ const Video = ({video}: VideoProps) => {
 					<span>{video.publishedAt}</span>
 				</p>
 			</div>
-		</div>
+		</Link>
 	)
 }
 
