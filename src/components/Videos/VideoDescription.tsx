@@ -16,7 +16,7 @@ const VideoDescription = ({ video }: VideoDescriptionProps) => {
 				<p>{video.detail.publishedAt}</p>
 			</div>
 			<div className={`${toggle ? 'h-auto' : 'h-6'} overflow-hidden`}>
-				<pre className='text-sm leading-6'>{video.detail.description}</pre>
+				<p className='text-sm leading-6' dangerouslySetInnerHTML={{ __html: video.detail.description }}></p>
 			</div>
 			<button onClick={() => setToggle(!toggle)}>daha {toggle ? 'az' : 'fazla'}...</button>
 		</div>
