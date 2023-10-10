@@ -43,7 +43,7 @@ const VideoContainer = () => {
   }, [])
 
   return (
-		<div className='grid gap-6 text-white md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'>
+		<div className='mt-6 grid gap-6 text-white md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'>
 			{videos.map((video: IVideo) => (
 				<Video key={video.id} video={video} />
 			))}
