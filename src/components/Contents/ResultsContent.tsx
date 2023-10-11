@@ -13,15 +13,15 @@ const ResultsContent = ({ results }: ResultsContentProps) => {
       {results.map((data: any) => {
         switch (data.type) {
 					case 'video':
-						return <Video video={data} />
+						return <Video key={data.id} video={data} />
 						break
 
 					case 'channel':
-						return <Channel channel={data} />
+						return <Channel key={data.id} channel={data} />
 						break
 
 					case 'video':
-						return <Playlist playlist={data} />
+						return <Playlist key={data.id}  playlist={data} />
 						break
 				}
       })}
