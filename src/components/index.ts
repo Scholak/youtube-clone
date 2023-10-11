@@ -8,3 +8,4 @@ export { default as Comments } from '@/components/Videos/Comments'
 
 export { default as HomeContent } from '@/components/Contents/HomeContent'
 export { default as WatchContent } from '@/components/Contents/WatchContent'
+export { default as ResultsContent } from '@/components/Contents/ResultsContent'
