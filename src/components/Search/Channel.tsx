@@ -14,7 +14,7 @@ const Channel = ({ channel }: ChannelProps) => {
 					alt='channel thumbnail'
 					width={150}
 					height={150}
-					className='shrink-0 w-32 h-32 rounded-full overflow-hidden'
+					className='shrink-0 w-32 h-32 rounded-full overflow-hidden object-cover'
 				/>
 			</div>
 			<div>
