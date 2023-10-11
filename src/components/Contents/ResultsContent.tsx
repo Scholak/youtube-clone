@@ -9,7 +9,7 @@ interface ResultsContentProps {
 
 const ResultsContent = ({ results }: ResultsContentProps) => {
 	return (
-    <div className='text-white mt-20 ml-[120px] px-[calc(20%)]'>
+    <div className='grid gap-4 text-white mt-20 ml-[120px] px-[calc(20%)]'>
       {results.map((data: any) => {
         switch (data.type) {
 					case 'video':
