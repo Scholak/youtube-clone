@@ -6,13 +6,13 @@ import { NextRequest } from "next/server";
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams 
 
-  const response = await api.get('/search', {params: {
+  const searchResponse = await api.get('/search', {params: {
     part: 'snippet',
     maxResults: 20,
     q: searchParams.get('q')
   }})
 
-  const channelIds = response.data.items.map((video: any) => video.snippet.channelId)
+  const channelIds = searchResponse.data.items.map((video: any) => video.snippet.channelId)
 
   const channelResponse = await api.get('/channels', {
 		params: {
@@ -23,7 +23,7 @@ export async function GET(request: NextRequest) {
 
   const channels = channelResponse.data.items
 
-  const search = response.data.items.map((result: any) => {
+  const search = searchResponse.data.items.map((result: any) => {
     const channel = channels.filter((channel: any) => channel.id === result.snippet.channelId)[0]
     let type, id
 
@@ -52,5 +52,5 @@ export async function GET(request: NextRequest) {
 		}
   })
 
-  return new Response(JSON.stringify({ data: response.data, channelResponse: channelResponse.data, search }))
+  return new Response(JSON.stringify({ search, pagetoken: searchResponse.data.nextPageToken }))
 }
