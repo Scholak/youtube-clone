@@ -21,7 +21,7 @@ const ResultsContent = ({ results, nextPageToken }: ResultsContentProps) => {
 		threshold: 0,
 	})
 
-	const [data, setData] = useState<any>(results)
+	const [data, setData] = useState<any>([])
 	const [isFetching, setIsFetching] = useState<boolean>(false)
 	const [pageToken, setPageToken] = useState<string>(nextPageToken)
 
