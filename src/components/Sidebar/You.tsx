@@ -1,6 +1,4 @@
-'use client'
-
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { FaChevronRight } from 'react-icons/fa'
 import SideLink from './SideLink'
 import axios from 'axios'
@@ -8,14 +6,6 @@ import Playlists from './Playlists'
 import { IPlaylist } from '@/types/playlistTypes'
 
 const You = () => {
-	const [playlists, setPlaylists] = useState<IPlaylist[]>([])
-
-	useEffect(() => {
-		axios.get(`http://localhost:3000/api/playlists`).then((res: any) => {
-			setPlaylists(res.data.playlists)
-		})
-	}, [])
-
   return (
 		<div className='px-3'>
 			<div className='flex items-center gap-2 py-2 px-4 rounded-lg text-white hover:bg-light-gray cursor-pointer'>
@@ -72,7 +62,7 @@ const You = () => {
 						</svg>
 					}
 				/>
-				{playlists && <Playlists playlists={playlists} />}
+				<Playlists />
 			</ul>
 		</div>
 	)

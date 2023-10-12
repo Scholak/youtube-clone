@@ -3,18 +3,15 @@
 import { IPlaylist } from '@/types/playlistTypes'
 import React, { useState } from 'react'
 import SideLink from './SideLink'
+import { myPlaylists } from '@/data/myPlaylists'
 
-interface IPlaylistProps {
-	playlists: IPlaylist[]
-}
-
-const Playlists = ({ playlists }: IPlaylistProps) => {
+const Playlists = () => {
   const [isActive, setIsActive] = useState<boolean>(false)
 
 	return (
 		<ul>
 			{isActive &&
-				playlists.map((playlist: IPlaylist) => (
+				myPlaylists.map((playlist: IPlaylist) => (
 					<SideLink
 					key={playlist.id}
 						href='/'
