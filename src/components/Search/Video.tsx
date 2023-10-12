@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 interface VideoProps {
@@ -7,7 +8,7 @@ interface VideoProps {
 
 const Video = ({ video }: VideoProps) => {
 	return (
-		<div className='w-full flex gap-2 cursor-pointer sm:gap-4'>
+		<Link href={`/watch?v=${video.id}`} className='w-full flex gap-2 cursor-pointer sm:gap-4'>
 			<div className='w-40 h-22 shrink-0 flex items-center justify-center rounded-lg overflow-hidden sm:w-80 sm:h-44'>
 				<Image
 					src={video.thumbnail}
@@ -22,7 +23,7 @@ const Video = ({ video }: VideoProps) => {
 				<p className='mb-1 text-[#aaa] text-xs sm:mb-2'>@{video.title}</p>
 				<p className='text-[#aaa] text-xs'>{video.description}</p>
 			</div>
-		</div>
+		</Link>
 	)
 }
 
