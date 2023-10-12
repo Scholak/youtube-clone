@@ -41,7 +41,7 @@ const ResultsContent = ({ results, nextPageToken }: ResultsContentProps) => {
 	}
 	
 	return (
-		<div className='grid gap-4 text-white mt-20 ml-[120px] px-[calc(20%)]'>
+		<div className='grid gap-4 text-white px-4 mt-20 sm:ml-[60px] md:px-20 lg:px-40 lg:ml-[120px] xl:px-80'>
 			{data.map((result: any) => {
 				switch (result.type) {
 					case 'video':

@@ -7,14 +7,14 @@ interface ChannelProps {
 
 const Channel = ({ channel }: ChannelProps) => {
 	return (
-		<div className='w-full flex items-center justiy-between gap-3 cursor-pointer'>
-			<div className='w-80 h-44 flex items-center justify-center'>
+		<div className='w-full flex items-center justiy-between gap-2 cursor-pointer sm:gap-3'>
+			<div className='w-40 h-22 flex items-center justify-center sm:w-80 sm:h-44'>
 				<Image
 					src={channel.channel.thumbnail}
 					alt='channel thumbnail'
 					width={150}
 					height={150}
-					className='shrink-0 w-32 h-32 rounded-full overflow-hidden object-cover'
+					className='shrink-0 w-16 h-16 rounded-full overflow-hidden object-cover sm:w-32 sm:h-32'
 				/>
 			</div>
 			<div>
