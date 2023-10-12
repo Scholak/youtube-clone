@@ -12,6 +12,7 @@ export async function GET(request: NextRequest) {
 				part: 'snippet',
 				maxResults: 20,
 				q: searchParams.get('q'),
+				pageToken: searchParams.get('pageToken'),
 			},
 		})
 
@@ -56,7 +57,7 @@ export async function GET(request: NextRequest) {
 			}
 		})
 
-		return new Response(JSON.stringify({ search, pagetoken: searchResponse.data.nextPageToken }))
+		return new Response(JSON.stringify({ search, pageToken: searchResponse.data.nextPageToken }))
   } catch (error: any) {
     return new Response(JSON.stringify({ error }), {status: 500})
   }

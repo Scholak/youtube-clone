@@ -20,7 +20,7 @@ const Results = async ({ searchParams }: SearchParams) => {
 	return (
 		<div className='flex'>
 			<Sidebar />
-			<ResultsContent results={response.data.search} />
+			<ResultsContent results={response.data.search} nextPageToken={response.data.pageToken} />
 		</div>
 	)
 }
