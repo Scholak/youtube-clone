@@ -20,7 +20,7 @@ const ResultsContent = ({ results }: ResultsContentProps) => {
 						return <Channel key={data.id} channel={data} />
 						break
 
-					case 'video':
+					case 'playlist':
 						return <Playlist key={data.id}  playlist={data} />
 						break
 				}
