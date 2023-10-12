@@ -42,18 +42,18 @@ const ResultsContent = ({ results, nextPageToken }: ResultsContentProps) => {
 	
 	return (
 		<div className='grid gap-4 text-white px-4 mt-20 sm:ml-[60px] md:px-20 lg:px-40 lg:ml-[120px] xl:px-80'>
-			{data.map((result: any) => {
+			{data.map((result: any, idx: number) => {
 				switch (result.type) {
 					case 'video':
-						return <Video key={result.id} video={result} />
+						return <Video key={idx} video={result} />
 						break
 
 					case 'channel':
-						return <Channel key={result.id} channel={result} />
+						return <Channel key={idx} channel={result} />
 						break
 
 					case 'playlist':
-						return <Playlist key={result.id} playlist={result} />
+						return <Playlist key={idx} playlist={result} />
 						break
 				}
 			})}
