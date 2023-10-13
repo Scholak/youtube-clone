@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import React from 'react'
 import { HiMenu } from 'react-icons/hi'
-import youtubeLogo from '@/assets/youtube-dark-logo.png'
+import youtubeLogo from '@/assets/youtube-logo.png'
 import Link from 'next/link'
 import { useDispatch } from 'react-redux'
 import { toggle } from '@/store/slices/sidebarToggleSlice'
