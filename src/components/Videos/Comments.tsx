@@ -1,15 +1,16 @@
+import { IVideoDetail } from '@/types/videoTypes'
 import Image from 'next/image'
 import React from 'react'
 
 interface CommentsProps {
-	data: any
+	video: IVideoDetail
 }
 
-const Comments = ({ data }: CommentsProps) => {
-  return (
+const Comments = ({ video }: CommentsProps) => {
+	return (
 		<div>
 			<div className='my-6 flex items-center gap-8'>
-				<p>{data.video.detail.comment} Yorum</p>
+				<p>{video.detail.comment} Yorum</p>
 				<div className='flex items-center gap-1'>
 					<svg
 						enable-background='new 0 0 24 24'
@@ -35,7 +36,7 @@ const Comments = ({ data }: CommentsProps) => {
 				/>
 			</div>
 			<div className='grid gap-6'>
-				{data.video.comments.data.map((comment: any) => (
+				{video.comments.data.map((comment: any) => (
 					<div key={comment.id} className='flex gap-4'>
 						<Image
 							src={comment.authorImage}
@@ -61,16 +62,10 @@ const Comments = ({ data }: CommentsProps) => {
 									</svg>
 									<span className='translate-y-0.5'>{comment.like}</span>
 								</div>
-								<svg
-									height='24'
-									viewBox='0 0 24 24'
-									width='24'
-									focusable='false'
-                  fill='#fff'
-								>
+								<svg height='24' viewBox='0 0 24 24' width='24' focusable='false' fill='#fff'>
 									<path d='M17,4h-1H6.57C5.5,4,4.59,4.67,4.38,5.61l-1.34,6C2.77,12.85,3.82,14,5.23,14h4.23l-1.52,4.94C7.62,19.97,8.46,21,9.62,21 c0.58,0,1.14-0.24,1.52-0.65L17,14h4V4H17z M10.4,19.67C10.21,19.88,9.92,20,9.62,20c-0.26,0-0.5-0.11-0.63-0.3 c-0.07-0.1-0.15-0.26-0.09-0.47l1.52-4.94l0.4-1.29H9.46H5.23c-0.41,0-0.8-0.17-1.03-0.46c-0.12-0.15-0.25-0.4-0.18-0.72l1.34-6 C5.46,5.35,5.97,5,6.57,5H16v8.61L10.4,19.67z M20,13h-3V5h3V13z'></path>
 								</svg>
-                <span className='py-1 px-3 rounded-3xl cursor-pointer hover:bg-light-gray'>Yanıtla</span>
+								<span className='py-1 px-3 rounded-3xl cursor-pointer hover:bg-light-gray'>Yanıtla</span>
 							</div>
 						</div>
 					</div>

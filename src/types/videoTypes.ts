@@ -66,3 +66,44 @@ export interface IVideo {
 		thumbnail: string
 	}
 }
+
+export interface IVideoDetail {
+	detail: {
+		id: string
+		publishedAt: string
+		title: string
+		description: string
+		view: string
+		like: string
+		comment: string
+		player: string
+	}
+	channel: {
+		id: string
+		title: string
+		thumbnail: string
+		subscribers: string
+	}
+	comments: {
+		data: Array<{
+			id: string
+			text: string
+			author: string
+			authorImage: string
+			authorChannelId: string
+			like: string
+		}>
+		nextPageToken: string
+	}
+	relatedVideos: {
+		data: Array<{
+			id: string
+			title: string
+			publishedAt: string
+			thumbnail: string
+			view: string
+			channel: string
+		}>
+		nextPageToken: string
+	}
+}

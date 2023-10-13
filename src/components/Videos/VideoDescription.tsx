@@ -1,9 +1,10 @@
 'use client'
 
+import { IVideoDetail } from '@/types/videoTypes'
 import React, { useState } from 'react'
 
 interface VideoDescriptionProps {
-  video: any
+  video: IVideoDetail
 }
 
 const VideoDescription = ({ video }: VideoDescriptionProps) => {

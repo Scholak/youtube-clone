@@ -27,7 +27,7 @@ const Watch = async ({searchParams}: WatchProps) => {
   try {
     const response = await axios.get(`http://localhost:3000/api/videos/${searchParams.v}`)
 
-    return <WatchContent videoDetail={response.data} />
+    return <WatchContent videoDetail={response.data.video} />
   } catch (error: any) {
     redirect('/')
   }

@@ -1,16 +1,17 @@
 import { teaser } from '@/lib/teaser'
+import { IVideoDetail } from '@/types/videoTypes'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
 interface RelatedVideosProps {
-	data: any
+	video: IVideoDetail
 }
 
-const RelatedVideos = ({ data }: RelatedVideosProps) => {
-  return (
+const RelatedVideos = ({ video }: RelatedVideosProps) => {
+	return (
 		<div className='grid gap-2'>
-			{data.video.relatedVideos.data.map((video: any) => (
+			{video.relatedVideos.data.map((video: any) => (
 				<Link key={video.id} href={{ pathname: '/watch', query: { v: video.id } }} className='w-[400px] flex gap-4'>
 					<div className='shrink-0 rounded-xl overflow-hidden w-[168px] h-[96px]'>
 						<Image
