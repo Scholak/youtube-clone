@@ -1,9 +1,7 @@
 import React from 'react'
 import { FaChevronRight } from 'react-icons/fa'
 import SideLink from './SideLink'
-import axios from 'axios'
 import Playlists from './Playlists'
-import { IPlaylist } from '@/types/playlistTypes'
 
 const You = () => {
   return (

@@ -5,7 +5,7 @@ import Video from '../Search/Video'
 import Channel from '../Search/Channel'
 import Playlist from '../Search/Playlist'
 import axios from 'axios'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
 import { useInView } from 'react-intersection-observer'
 
 interface ResultsContentProps {

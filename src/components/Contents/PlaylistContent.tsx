@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import React from 'react'
 import PlaylistDetail from '../playlist/PlaylistDetail'
 import PlaylistItems from '../playlist/PlaylistItems'
