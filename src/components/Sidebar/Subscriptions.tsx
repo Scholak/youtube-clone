@@ -1,19 +1,20 @@
 import React from 'react'
 import SideLink from './SideLink'
 import { mySubscribers } from '@/data/mySubscribers'
+import { ISubscriber } from '@/types/subscriptionTypes'
 
 const Subscriptions = () => {
   return (
 		<div className='px-3'>
 			<p className='mb-2 font-medium'>Abonelikler</p>
 			<ul>
-				{mySubscribers.map((subscription: any) => (
+				{mySubscribers.map((subscription: ISubscriber) => (
 					<SideLink
-					key={subscription.id}
+						key={subscription.id}
 						href='/'
-						text={subscription.snippet.title}
+						text={subscription.title}
 						isActive={false}
-						img={subscription.snippet.thumbnails.default.url}
+						img={subscription.thumbnail}
 					/>
 				))}
 			</ul>
