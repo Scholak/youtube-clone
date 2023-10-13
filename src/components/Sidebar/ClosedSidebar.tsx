@@ -7,7 +7,7 @@ interface ClosedSidebarProps {
 
 const ClosedSidebar = ({className}: ClosedSidebarProps) => {
   return (
-		<nav className={`hidden sm:top-14 sm:left-0 sm:bottom-0 w-[60px] sm:block sm:fixed ${className}`}>
+		<nav className={`hidden md:top-14 md:left-0 md:bottom-0 md:w-[60px] md:block md:fixed ${className}`}>
 			<ul className='mt-4 text-[10px] text-white'>
 				<li>
 					<Link
