@@ -8,22 +8,23 @@ interface PlaylistDetailProps {
 
 const PlaylistDetail = ({ playlist }: PlaylistDetailProps) => {
   return (
-		<div className='grid grid-cols-2 place-items-center gap-8 md:grid-cols-1'>
+		<div className='md:max-w-md flex gap-8 md:flex-col'>
 			<Link href={{ pathname: '/watch', query: { v: playlist.items[0].videoId } }}>
 				<Image
 					src={playlist.thumbnail}
 					alt='playlist thumbnail'
 					width={360}
 					height={200}
-					className='w-80 h-40 rounded-lg object-cover'
+					className='flex-1 w-full aspect-video rounded-lg object-cover'
 				/>
 			</Link>
-			<div className='flex flex-col justify-between'>
+			<div className='flex flex-col gap-4 justify-between'>
 				<h1 className='text-3xl font-bold'>{playlist.title}</h1>
 				<div className='flex items-center justify-between gap-2'>
-					<div>
-						<p className='my-1'>{playlist.channel.title}</p>
-						<p className='mb-1 text-sm text-[#aaa]'>{playlist.items.length} Video</p>
+					<div className='flex items-center gap-2'>
+						<p>{playlist.channel.title}</p>
+						<span className='w-1 h-1 bg-white rounded-full'></span>
+						<p className='text-sm text-[#aaa]'>{playlist.items.length} Video</p>
 					</div>
 					<div className='flex gap-2 items-center'>
 						<button className='w-9 h-9 flex items-center justify-center rounded-full bg-light-gray'>
@@ -51,13 +52,13 @@ const PlaylistDetail = ({ playlist }: PlaylistDetailProps) => {
 					</div>
 				</div>
 				<p>{playlist.description}</p>
-				<div className='mt-2 flex gap-2'>
-					<button className='flex-1 flex items-center justify-center py-2 rounded-3xl bg-white text-dark-gray font-medium'>
+				<div className='flex gap-2'>
+					<Link href={{ pathname: '/watch', query: { v: playlist.items[0].videoId } }} className='flex-1 flex items-center justify-center py-2 rounded-3xl bg-white text-dark-gray font-medium'>
 						<svg height='24' viewBox='0 0 24 24' width='24' focusable='false' fill='rgb(15,15,15)'>
 							<path d='m7 4 12 8-12 8V4z'></path>
 						</svg>
 						<p>Tümünü Oynat</p>
-					</button>
+					</Link>
 					<button className='flex-1 flex items-center justify-center py-2 rounded-3xl bg-light-gray text-white font-medium'>
 						<svg
 							enable-background='new 0 0 24 24'
