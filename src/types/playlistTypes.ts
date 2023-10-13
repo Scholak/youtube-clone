@@ -1,43 +1,26 @@
 export interface IPlaylist {
-	kind: string
-	etag: string
 	id: string
-	snippet: {
-		publishedAt: string
-		channelId: string
+	title: string
+}
+
+export interface IPlaylistDetail {
+	id: string
+	title: string
+	description: string
+	thumbnail: string
+	totalVideos: number
+	channel: {
 		title: string
-		description: string
-		thumbnails: {
-			default: {
-				url: string
-				width: number
-				height: number
-			}
-			medium: {
-				url: string
-				width: number
-				height: number
-			}
-			high: {
-				url: string
-				width: number
-				height: number
-			}
-			standard: {
-				url: string
-				width: number
-				height: number
-			}
-			maxres: {
-				url: string
-				width: number
-				height: number
-			}
-		}
-		channelTitle: string
-		localized: {
-			title: string
-			description: string
-		}
+		thumbnail: string
 	}
+	items: IPlaylistItem[]
+}
+
+export interface IPlaylistItem {
+	id: string
+	title: string
+	description: string
+	thumbnail: string
+	publishedAt: string
+	videoId: string
 }

@@ -15,7 +15,7 @@ const Playlists = () => {
 					<SideLink
 						key={playlist.id}
 						href={`/playlist?list=${playlist.id}`}
-						text={playlist.snippet.title}
+						text={playlist.title}
 						isActive={false}
 						svg={
 							<svg height='24' viewBox='0 0 24 24' width='24' focusable='false' fill='#fff'>
