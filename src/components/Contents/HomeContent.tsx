@@ -10,11 +10,11 @@ const HomeContent = () => {
   const sidebarToggle = useSelector((state: RootState) => state.sidebarToggle.toggle)
 
   return (
-		<div className={`${sidebarToggle ? 'xl:ml-[60px]' : 'xl:ml-[240px]'} relative sm:ml-[60px] mt-14 px-4 overflow-x-hidden`}>
-      <Categories />
-      <Videos />
-		</div>
-	)
+      <div className={`${sidebarToggle ? 'xl:ml-[60px]' : 'xl:ml-[240px]'} relative md:ml-[60px] mt-14 px-4 overflow-x-hidden`}>
+         <Categories />
+         <Videos />
+      </div>
+   )
 }
 
 export default HomeContent
