@@ -3,6 +3,8 @@ import axios from 'axios'
 import { redirect } from 'next/navigation'
 import React from 'react'
 
+export const revalidate = 0
+
 interface PlaylistProps {
 	searchParams: {
 		list: string
