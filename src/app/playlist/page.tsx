@@ -18,7 +18,7 @@ const Playlist = async ({ searchParams }: PlaylistProps) => {
 		return (
 			<div className='flex'>
 				<Sidebar />
-				<PlaylistContent data={playlistResponse.data} />
+				<PlaylistContent playlist={playlistResponse.data.playlist} />
 			</div>
 		)
 	} catch (error: any) {

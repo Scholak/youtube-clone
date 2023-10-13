@@ -1,9 +1,10 @@
+import { IPlaylistItem } from '@/types/playlistTypes'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
 interface PlaylistItemsProps {
-	items: any
+	items: IPlaylistItem[]
 	channel: string
 }
 

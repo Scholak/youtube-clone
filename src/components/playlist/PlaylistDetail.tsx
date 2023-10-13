@@ -1,9 +1,10 @@
+import { IPlaylistDetail } from '@/types/playlistTypes'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
 interface PlaylistDetailProps {
-  playlist: any
+	playlist: IPlaylistDetail
 }
 
 const PlaylistDetail = ({ playlist }: PlaylistDetailProps) => {
