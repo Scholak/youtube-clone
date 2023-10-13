@@ -1,5 +1,6 @@
 import { PlaylistContent, Sidebar } from '@/components'
 import axios from 'axios'
+import { redirect } from 'next/navigation'
 import React from 'react'
 
 interface PlaylistProps {
@@ -9,14 +10,18 @@ interface PlaylistProps {
 }
 
 const Playlist = async ({ searchParams }: PlaylistProps) => {
-	const playlistResponse = await axios.get(`http://localhost:3000/api/playlists/${searchParams.list}`)
+	try {
+		const playlistResponse = await axios.get(`http://localhost:3000/api/playlists/${searchParams.list}`)
 
-  return (
-		<div className='flex'>
-			<Sidebar />
-			<PlaylistContent data={playlistResponse.data} />
-		</div>
-	)
+		return (
+			<div className='flex'>
+				<Sidebar />
+				<PlaylistContent data={playlistResponse.data} />
+			</div>
+		)
+	} catch (error: any) {
+		redirect('/')
+	}
 }
 
 export default Playlist

@@ -89,7 +89,6 @@ export async function GET(request: Request, { params }: Params) {
 
 		return new Response(JSON.stringify({ video }))
   } catch (error: any) {
-    console.log(error.response.data.error)
     return new Response(JSON.stringify({ error: error.response.data.error }), { status: 500 })
   }
 

@@ -13,7 +13,7 @@ export async function generateMetadata({searchParams}: WatchProps) {
   const response = await axios.get(`http://localhost:3000/api/videos/${searchParams.v}`)
 
   return {
-    title: response.data.video.detail.title
+    title: response.data?.video.detail.title
   }
 }
 
@@ -22,15 +22,13 @@ const Watch = async ({searchParams}: WatchProps) => {
     redirect('/')
   }
 
-  const response = await axios.get(`http://localhost:3000/api/videos/${searchParams.v}`)
+  try {
+    const response = await axios.get(`http://localhost:3000/api/videos/${searchParams.v}`)
 
-  if (!response.data) {
+    return <WatchContent videoDetail={response.data} />
+  } catch (error: any) {
     redirect('/')
   }
-  
-  return (
-		<WatchContent videoDetail={response.data} />
-	)
 }
 
 export default Watch

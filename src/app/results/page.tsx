@@ -1,5 +1,6 @@
 import { ResultsContent, Sidebar } from '@/components'
 import axios from 'axios'
+import { redirect } from 'next/navigation'
 import React from 'react'
 
 interface SearchParams {
@@ -15,14 +16,18 @@ export async function generateMetadata({ searchParams }: SearchParams) {
 }
 
 const Results = async ({ searchParams }: SearchParams) => {
-	const response = await axios.get('http://localhost:3000/api/search', { params: { q: searchParams.search_query } })
+	try {
+		const response = await axios.get('http://localhost:3000/api/search', { params: { q: searchParams.search_query } })
 
-	return (
-		<div className='flex'>
-			<Sidebar />
-			<ResultsContent results={response.data.search} nextPageToken={response.data.pageToken} />
-		</div>
-	)
+		return (
+			<div className='flex'>
+				<Sidebar />
+				<ResultsContent results={response.data.search} nextPageToken={response.data.pageToken} />
+			</div>
+		)
+	} catch (error: any) {
+		redirect('/')
+	}
 }
 
 export default Results

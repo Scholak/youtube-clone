@@ -59,6 +59,6 @@ export async function GET(request: NextRequest) {
 
 		return new Response(JSON.stringify({ search, pageToken: searchResponse.data.nextPageToken }))
   } catch (error: any) {
-    return new Response(JSON.stringify({ error }), {status: 500})
+    return new Response(JSON.stringify({ error: 'Intetnal server error' }), {status: 500})
   }
 }
