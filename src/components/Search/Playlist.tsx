@@ -1,10 +1,11 @@
+import { ISearchItem } from '@/types/searchTypes'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { FaPlay } from 'react-icons/fa'
 
 interface PlaylistProps {
-  playlist: any
+	playlist: ISearchItem
 }
 
 const Playlist = ({playlist}: PlaylistProps) => {

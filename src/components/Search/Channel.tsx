@@ -1,8 +1,9 @@
+import { ISearchItem } from '@/types/searchTypes'
 import Image from 'next/image'
 import React from 'react'
 
 interface ChannelProps {
-	channel: any
+	channel: ISearchItem
 }
 
 const Channel = ({ channel }: ChannelProps) => {

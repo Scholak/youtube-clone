@@ -7,9 +7,10 @@ import Playlist from '../Search/Playlist'
 import axios from 'axios'
 import { useSearchParams } from 'next/navigation'
 import { useInView } from 'react-intersection-observer'
+import { ISearchItem } from '@/types/searchTypes'
 
 interface ResultsContentProps {
-	results: any
+	results: ISearchItem[]
 	nextPageToken: string
 }
 
@@ -27,7 +28,7 @@ const ResultsContent = ({ results, nextPageToken }: ResultsContentProps) => {
 
 	const fetchMore = () => {
     axios.get(`http://localhost:3000/api/search`, {params: { pageToken, q: search_query }}).then((response: any) => {
-      setData((prev: any[]) => [...prev, ...response.data.search])
+      setData((prev: ISearchItem[]) => [...prev, ...response.data.search])
       setPageToken(response.data.pageToken)
       setIsFetching(false)
     }).catch((err: any) => {
@@ -42,7 +43,7 @@ const ResultsContent = ({ results, nextPageToken }: ResultsContentProps) => {
 	
 	return (
 		<div className='grid gap-4 text-white px-4 mt-20 md:ml-[60px] md:px-20 lg:px-40 lg:ml-[120px] xl:px-80'>
-			{data.map((result: any, idx: number) => {
+			{data.map((result: ISearchItem, idx: number) => {
 				switch (result.type) {
 					case 'video':
 						return <Video key={idx} video={result} />
