@@ -32,7 +32,7 @@ export async function GET(request: NextRequest, { params }: Params) {
 				title: playlistItem.snippet.title,
 				description: playlistItem.snippet.description,
 				thumbnail: playlistItem.snippet.thumbnails.standard.url,
-				publishedAt: dateFormatter(playlistItem.snippet.publishedAt),
+				publishedAt: dateFormatter(playlistItem.snippet.publishedAt).replace('neredeyse ', ''),
 				videoId: playlistItem.contentDetails.videoId,
 			}
 		}),
