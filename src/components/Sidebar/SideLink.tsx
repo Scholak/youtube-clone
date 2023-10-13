@@ -15,7 +15,7 @@ const SideLink = ({ text, Icon, svg, img, href, isActive }: SideLinkProps) => {
 	return (
 		<li>
 			<Link
-				href={{ pathname: href }}
+				href={href}
 				className={`${
 					isActive && 'bg-light-gray font-medium'
 				} flex items-center gap-4 py-2 px-4 rounded-lg text-white whitespace-nowrap text-ellipsis overflow-hidden hover:bg-light-gray`}

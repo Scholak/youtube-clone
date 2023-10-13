@@ -13,8 +13,8 @@ const Playlists = () => {
 			{isActive &&
 				myPlaylists.map((playlist: IPlaylist) => (
 					<SideLink
-					key={playlist.id}
-						href='/'
+						key={playlist.id}
+						href={`/playlist?list=${playlist.id}`}
 						text={playlist.snippet.title}
 						isActive={false}
 						svg={
