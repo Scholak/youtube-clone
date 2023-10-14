@@ -1,6 +1,6 @@
 import React from 'react'
-import PlaylistDetail from '../playlist/PlaylistDetail'
-import PlaylistItems from '../playlist/PlaylistItems'
+import PlaylistDetail from '../Playlist/PlaylistDetail'
+import PlaylistItems from '../Playlist/PlaylistItems'
 import { IPlaylistDetail } from '@/types/playlistTypes'
 
 interface PlaylistContentProps {

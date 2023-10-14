@@ -1,8 +1,8 @@
 import React from 'react'
-import ChannelBanner from '../channel/ChannelBanner'
-import ChannelDetail from '../channel/ChannelDetail'
-import ChannelVideos from '../channel/ChannelVideos'
-import ChannelSections from '../channel/ChannelSections'
+import ChannelBanner from '../Channel/ChannelBanner'
+import ChannelDetail from '../Channel/ChannelDetail'
+import ChannelVideos from '../Channel/ChannelVideos'
+import ChannelSections from '../Channel/ChannelSections'
 
 interface ChannelContentProps {
 	channel: any
