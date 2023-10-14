@@ -23,4 +23,5 @@
 - Search by video, playlist, channel name
 - Video Detail with description, comments and other videos
 - Playlist page with playlist details and playlist item list
+- Channel detail page with banner, channel info and related videos
 - Responsive design
