@@ -1,0 +1,51 @@
+'use client'
+
+import axios from 'axios'
+import React, { useState } from 'react'
+import { useInView } from 'react-intersection-observer'
+import ChannelVideo from './ChannelVideo'
+
+interface ChannelVideosProps {
+	defaultVideos: any
+	initialPageToken: string
+	channel: any
+}
+
+const ChannelVideos = ({ defaultVideos, initialPageToken, channel }: ChannelVideosProps) => {
+	const { ref, inView } = useInView({
+		threshold: 0,
+	})
+
+	const [videos, setVideos] = useState<any>(defaultVideos)
+	const [pageToken, setPageToken] = useState<string>(initialPageToken)
+	const [isFetching, setIsFetching] = useState<boolean>(false)
+
+	const fetchMore = () => {
+		axios
+			.get(`http://localhost:3000/api/channels/${channel.id}?pageToken=${pageToken}`)
+			.then((response: any) => {
+				setVideos((prev: any) => [...prev, ...response.data.channel.videos])
+				setPageToken(response.data.pageToken)
+				setIsFetching(false)
+			})
+			.catch((err: any) => {
+				console.log(err.response.data.message)
+			})
+	}
+
+	if (inView && !isFetching) {
+		setIsFetching(true)
+		fetchMore()
+	}
+
+	return (
+		<div className='mt-6 grid gap-6 text-white md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'>
+			{videos.map((video: any) => (
+				<ChannelVideo key={video.id} video={video} channel={channel} />
+			))}
+			<span className='text-transparent'>{videos.length && !isFetching && <div ref={ref}></div>}</span>
+		</div>
+	)
+}
+
+export default ChannelVideos
