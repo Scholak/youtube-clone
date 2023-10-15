@@ -4,9 +4,11 @@ import React, { useState } from 'react'
 import { BiSolidMicrophone } from 'react-icons/bi'
 import { AiOutlineSearch } from 'react-icons/ai'
 import MobileSearch from './MobileSearch'
-import { redirect } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 
 const MidNav = () => {
+	const router = useRouter()
+
 	const [toggle, setToggle] = useState<boolean>(false)
 	const [searchQuery, setSearchQuery] = useState<string>('')
 
@@ -18,7 +20,7 @@ const MidNav = () => {
 		if (window.innerWidth < 640) {
 			setToggle(!toggle)
 		} else {
-			redirect(`/results?search_query=${searchQuery}`)
+			router.push(`/results?search_query=${searchQuery}`)
 		}
 	}
 
