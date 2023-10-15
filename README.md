@@ -27,4 +27,5 @@
 - Responsive design
 
 ## Project Demo
-[<img src="./project/img.png"/>](./project/video.mp4)
+https://github.com/Scholak/youtube-clone/assets/70487430/d3e38a4f-b677-44ab-8148-772e4a669fbe
+
