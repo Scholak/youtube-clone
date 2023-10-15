@@ -10,7 +10,7 @@ interface ChannelProps {
 }
 
 export async function generateMetadata({ searchParams }: ChannelProps) {
-	const response = await axios.get(`http://localhost:3000/api/channels/${searchParams.id}`)
+	const response = await axios.get(`${process.env.APP_URL}/api/channels/${searchParams.id}`)
 
 	return {
 		title: response.data.channel.title
@@ -19,7 +19,7 @@ export async function generateMetadata({ searchParams }: ChannelProps) {
 
 const Channel = async ({ searchParams }: ChannelProps) => {
 	try {
-		const response = await axios.get(`http://localhost:3000/api/channels/${searchParams.id}`)
+		const response = await axios.get(`${process.env.APP_URL}/api/channels/${searchParams.id}`)
 
 		return (
 			<div className='flex'>

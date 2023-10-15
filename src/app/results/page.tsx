@@ -19,7 +19,7 @@ export async function generateMetadata({ searchParams }: SearchParams) {
 
 const Results = async ({ searchParams }: SearchParams) => {
 	try {
-		const response = await axios.get('http://localhost:3000/api/search', { params: { q: searchParams.search_query } })
+		const response = await axios.get(`${process.env.APP_URL}/api/search`, { params: { q: searchParams.search_query } })
 
 		return (
 			<div className='flex'>

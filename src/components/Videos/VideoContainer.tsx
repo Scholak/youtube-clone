@@ -16,13 +16,16 @@ const VideoContainer = () => {
   const [isFetching, setIsFetching] = useState<boolean>(false)
 
   const fetchMore = () => {
-    axios.get(`http://localhost:3000/api/videos?pageToken=${pageToken}`).then((response: any) => {
-      setVideos((prev: IVideo[]) => [...prev, ...response.data.videos])
-      setPageToken(response.data.pageToken)
-      setIsFetching(false)
-    }).catch((err: any) => {
-      console.log(err.response.data.message)
-    })
+    axios
+			.get(`${process.env.NEXT_PUBLIC_APP_URL}/api/videos?pageToken=${pageToken}`)
+			.then((response: any) => {
+				setVideos((prev: IVideo[]) => [...prev, ...response.data.videos])
+				setPageToken(response.data.pageToken)
+				setIsFetching(false)
+			})
+			.catch((err: any) => {
+				console.log(err.response.data.message)
+			})
   }
 
   if (inView && !isFetching) {
@@ -32,7 +35,7 @@ const VideoContainer = () => {
 
   useEffect(() => {
     axios
-			.get('http://localhost:3000/api/videos')
+			.get(`${process.env.NEXT_PUBLIC_APP_URL}/api/videos`)
 			.then((response: any) => {
 				setVideos(response.data.videos)
 				setPageToken(response.data.pageToken)

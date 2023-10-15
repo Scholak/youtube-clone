@@ -12,7 +12,7 @@ interface WatchProps {
 }
 
 export async function generateMetadata({searchParams}: WatchProps) {
-  const response = await axios.get(`http://localhost:3000/api/videos/${searchParams.v}`)
+  const response = await axios.get(`${process.env.APP_URL}/api/videos/${searchParams.v}`)
 
   return {
     title: response.data?.video.detail.title
@@ -25,7 +25,7 @@ const Watch = async ({searchParams}: WatchProps) => {
   }
 
   try {
-    const response = await axios.get(`http://localhost:3000/api/videos/${searchParams.v}`)
+    const response = await axios.get(`${process.env.APP_URL}/api/videos/${searchParams.v}`)
 
     return <WatchContent videoDetail={response.data.video} />
   } catch (error: any) {

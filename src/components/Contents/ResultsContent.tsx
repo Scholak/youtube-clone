@@ -28,14 +28,17 @@ const ResultsContent = ({ results, nextPageToken }: ResultsContentProps) => {
 	const [pageToken, setPageToken] = useState<string>(nextPageToken)
 
 	const fetchMore = () => {
-    axios.get(`http://localhost:3000/api/search`, {params: { pageToken, q: search_query }}).then((response: any) => {
-      setData((prev: ISearchItem[]) => [...prev, ...response.data.search])
-      setPageToken(response.data.pageToken)
-      setIsFetching(false)
-			router.refresh()
-    }).catch((err: any) => {
-      console.log(err.response.data.message)
-    })
+    axios
+			.get(`${process.env.NEXT_PUBLIC_APP_URL}/api/search`, { params: { pageToken, q: search_query } })
+			.then((response: any) => {
+				setData((prev: ISearchItem[]) => [...prev, ...response.data.search])
+				setPageToken(response.data.pageToken)
+				setIsFetching(false)
+				router.refresh()
+			})
+			.catch((err: any) => {
+				console.log(err.response.data.message)
+			})
   }
 
 	if (inView && !isFetching) {

@@ -12,7 +12,7 @@ interface PlaylistProps {
 }
 
 export async function generateMetadata({ searchParams }: PlaylistProps) {
-	const playlistResponse = await axios.get(`http://localhost:3000/api/playlists/${searchParams.list}`)
+	const playlistResponse = await axios.get(`${process.env.APP_URL}/api/playlists/${searchParams.list}`)
 
 	return {
 		title: playlistResponse.data.playlist.title
@@ -21,7 +21,7 @@ export async function generateMetadata({ searchParams }: PlaylistProps) {
 
 const Playlist = async ({ searchParams }: PlaylistProps) => {
 	try {
-		const playlistResponse = await axios.get(`http://localhost:3000/api/playlists/${searchParams.list}`)
+		const playlistResponse = await axios.get(`${process.env.APP_URL}/api/playlists/${searchParams.list}`)
 
 		return (
 			<div className='flex'>

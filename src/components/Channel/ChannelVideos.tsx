@@ -24,7 +24,7 @@ const ChannelVideos = ({ defaultVideos, initialPageToken, channel }: ChannelVide
 
 	const fetchMore = () => {
 		axios
-			.get(`http://localhost:3000/api/channels/${channel.id}?pageToken=${pageToken}`)
+			.get(`${process.env.NEXT_PUBLIC_APP_URL}/api/channels/${channel.id}?pageToken=${pageToken}`)
 			.then((response: any) => {
 				setVideos((prev: any) => [...prev, ...response.data.channel.videos])
 				setPageToken(response.data.pageToken)
