@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BsArrowLeft } from 'react-icons/bs'
 import { BiSolidMicrophone } from 'react-icons/bi'
 import { AiOutlineSearch } from 'react-icons/ai'
@@ -22,6 +22,10 @@ const MobileSearch = ({ setToggle }: MobileSearchProps) => {
 	const handleSearch = () => {
 		router.push(`/results?search_query=${searchQuery}`)
 	}
+
+	useEffect(() => {
+		router.refresh()
+	}, [])
 
 	return (
 		<div className='fixed top-0 right-0 left-0 h-14 flex items-center gap-3 z-10 bg-gray px-4'>

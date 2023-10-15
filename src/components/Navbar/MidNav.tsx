@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BiSolidMicrophone } from 'react-icons/bi'
 import { AiOutlineSearch } from 'react-icons/ai'
 import MobileSearch from './MobileSearch'
@@ -23,6 +23,10 @@ const MidNav = () => {
 			router.push(`/results?search_query=${searchQuery}`)
 		}
 	}
+
+	useEffect(() => {
+		router.refresh()
+	}, [])
 
   return (
 		<>

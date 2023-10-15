@@ -1,9 +1,10 @@
 'use client'
 
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import ChannelVideo from './ChannelVideo'
+import { useRouter } from 'next/navigation'
 
 interface ChannelVideosProps {
 	defaultVideos: any
@@ -12,6 +13,7 @@ interface ChannelVideosProps {
 }
 
 const ChannelVideos = ({ defaultVideos, initialPageToken, channel }: ChannelVideosProps) => {
+	const router = useRouter()
 	const { ref, inView } = useInView({
 		threshold: 0,
 	})
@@ -37,6 +39,10 @@ const ChannelVideos = ({ defaultVideos, initialPageToken, channel }: ChannelVide
 		setIsFetching(true)
 		fetchMore()
 	}
+
+	useEffect(() => {
+		router.refresh()
+	}, [])
 
 	return (
 		<div className='mt-12 grid gap-6 px-10 sm:px-20 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'>
