@@ -4,15 +4,13 @@ import React, { useState } from 'react'
 import { BsArrowLeft } from 'react-icons/bs'
 import { BiSolidMicrophone } from 'react-icons/bi'
 import { AiOutlineSearch } from 'react-icons/ai'
-import { useRouter } from 'next/navigation'
+import { redirect } from 'next/navigation'
 
 interface MobileSearchProps {
   setToggle: (toggle: boolean) => void
 }
 
 const MobileSearch = ({ setToggle }: MobileSearchProps) => {
-	const router = useRouter()
-
 	const [searchQuery, setSearchQuery] = useState<string>('')
 
 	const handleChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -20,7 +18,7 @@ const MobileSearch = ({ setToggle }: MobileSearchProps) => {
 	}
 
 	const handleSearch = () => {
-		router.push(`/results?search_query=${searchQuery}`)
+		redirect(`/results?search_query=${searchQuery}`)
 	}
 
 	return (
