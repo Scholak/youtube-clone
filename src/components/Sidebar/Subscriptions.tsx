@@ -11,7 +11,7 @@ const Subscriptions = () => {
 				{mySubscribers.map((subscription: ISubscriber) => (
 					<SideLink
 						key={subscription.id}
-						href={`/channels?id=${subscription.id}`}
+						href={`/channel?id=${subscription.id}`}
 						text={subscription.title}
 						isActive={false}
 						img={subscription.thumbnail}
