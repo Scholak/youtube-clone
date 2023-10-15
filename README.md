@@ -26,4 +26,4 @@
 - Channel detail page with banner, channel info and related videos
 - Responsive design
 
-[!(<img src="./project/img.png" width="600" height="300"/>)](./project/video.mp4)
+[<img src="./project/img.png" width="600" height="300"/>](./project/video.mp4)
