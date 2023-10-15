@@ -62,6 +62,7 @@ export interface IVideo {
 	thumbnail: string
 	viewCount: string
 	channel: {
+		id: string
 		title: string
 		thumbnail: string
 	}

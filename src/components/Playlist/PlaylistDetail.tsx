@@ -9,7 +9,7 @@ interface PlaylistDetailProps {
 
 const PlaylistDetail = ({ playlist }: PlaylistDetailProps) => {
   return (
-		<div className='md:max-w-md flex gap-8 md:flex-col'>
+		<div className='md:max-w-md flex gap-8 flex-col'>
 			<Link href={{ pathname: '/watch', query: { v: playlist.items[0].videoId } }}>
 				<Image
 					src={playlist.thumbnail}

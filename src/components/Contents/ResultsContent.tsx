@@ -5,7 +5,7 @@ import Video from '../Search/Video'
 import Channel from '../Search/Channel'
 import Playlist from '../Search/Playlist'
 import axios from 'axios'
-import { useSearchParams } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { useInView } from 'react-intersection-observer'
 import { ISearchItem } from '@/types/searchTypes'
 
@@ -15,6 +15,7 @@ interface ResultsContentProps {
 }
 
 const ResultsContent = ({ results, nextPageToken }: ResultsContentProps) => {
+	const router = useRouter()
 	const searchParams = useSearchParams()
 	const search_query = searchParams.get('search_query')
 
@@ -31,6 +32,7 @@ const ResultsContent = ({ results, nextPageToken }: ResultsContentProps) => {
       setData((prev: ISearchItem[]) => [...prev, ...response.data.search])
       setPageToken(response.data.pageToken)
       setIsFetching(false)
+			router.refresh()
     }).catch((err: any) => {
       console.log(err.response.data.message)
     })

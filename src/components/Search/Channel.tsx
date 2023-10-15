@@ -1,5 +1,6 @@
 import { ISearchItem } from '@/types/searchTypes'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 interface ChannelProps {
@@ -8,7 +9,7 @@ interface ChannelProps {
 
 const Channel = ({ channel }: ChannelProps) => {
 	return (
-		<div className='w-full flex items-center justiy-between gap-2 cursor-pointer sm:gap-3'>
+		<Link href={`/channel?id=${channel.id}`} className='w-full flex items-center justiy-between gap-2 cursor-pointer sm:gap-3'>
 			<div className='w-40 h-22 flex items-center justify-center sm:w-80 sm:h-44'>
 				<Image
 					src={channel.channel.thumbnail}
@@ -26,7 +27,7 @@ const Channel = ({ channel }: ChannelProps) => {
 			<button className='flex items-center px-4 py-2 rounded-3xl bg-white text-dark-gray font-medium whitespace-nowrap'>
 				Abone ol
 			</button>
-		</div>
+		</Link>
 	)
 }
 

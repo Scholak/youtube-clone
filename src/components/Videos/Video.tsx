@@ -9,7 +9,7 @@ interface VideoProps {
 
 const Video = ({video}: VideoProps) => {
   return (
-		<Link href={{pathname: '/watch', query: { v: video.id }}}>
+		<Link href={{ pathname: '/watch', query: { v: video.id } }}>
 			<div className='w-full mb-2 aspect-video rounded-lg overflow-hidden'>
 				<Image
 					src={video.thumbnail}
@@ -21,13 +21,15 @@ const Video = ({video}: VideoProps) => {
 			</div>
 			<div className='flex items-start gap-2'>
 				<div className='shrink-0 w-10 h-10 rounded-full overflow-hidden'>
-					<Image
-						src={video.channel.thumbnail}
-						alt='channel thumbnail'
-						width={40}
-						height={40}
-						className='w-full h-full object-cover'
-					/>
+					<Link href={`/channel?id=${video.channel.id}`}>
+						<Image
+							src={video.channel.thumbnail}
+							alt='channel thumbnail'
+							width={40}
+							height={40}
+							className='w-full h-full object-cover'
+						/>
+					</Link>
 				</div>
 				<p>{video.title}</p>
 			</div>

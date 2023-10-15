@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import VideoDescription from './VideoDescription'
 import { IVideoDetail } from '@/types/videoTypes'
+import Link from 'next/link'
 
 interface VideoDetailProps {
 	video: IVideoDetail
@@ -18,13 +19,15 @@ const VideoDetail = ({ video }: VideoDetailProps) => {
 			<p className='my-2 text-2xl font-semibold'>{video.detail.title}</p>
 			<div className='mb-4 flex flex-col gap-4 justify-between lg:flex-row lg:items-center'>
 				<div className='h-10 flex items-start gap-3'>
-					<Image
-						src={video.channel.thumbnail}
-						alt='channel thumbnail'
-						width={40}
-						height={40}
-						className='h-full rounded-full'
-					/>
+					<Link href={`/channel?id=${video.channel.id}`}>
+						<Image
+							src={video.channel.thumbnail}
+							alt='channel thumbnail'
+							width={40}
+							height={40}
+							className='h-full rounded-full'
+						/>
+					</Link>
 					<div className='flex flex-col justify-between'>
 						<p className='font-medium'>{video.channel.title}</p>
 						<p className='text-sm text-[#aaa]'>{video.channel.subscribers} abone</p>

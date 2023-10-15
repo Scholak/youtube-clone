@@ -40,6 +40,7 @@ export async function GET(request: NextRequest) {
 				thumbnail: video.snippet.thumbnails.standard.url,
 				viewCount: viewFormatter.format(Number(video.statistics.viewCount)),
 				channel: {
+					id: channel.id,
 					title: channel.snippet.title,
 					thumbnail: channel.snippet.thumbnails.default.url,
 				},
