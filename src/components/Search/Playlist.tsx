@@ -10,8 +10,8 @@ interface PlaylistProps {
 
 const Playlist = ({playlist}: PlaylistProps) => {
   return (
-		<Link href={{ pathname: '/playlist', query: { list: playlist.id } }} className='w-full flex gap-2 cursor-pointer sm:gap-4'>
-			<div className='relative shrink-0 w-40 h-22 flex items-center justify-center rounded-lg overflow-hidden sm:w-80 sm:h-22'>
+		<Link href={{ pathname: '/playlist', query: { list: playlist.id } }} className='w-full flex flex-col gap-2 cursor-pointer sm:flex-row sm:gap-4'>
+			<div className='relative shrink-0 w-full aspect-video object-cover flex items-center justify-center rounded-lg overflow-hidden sm:w-80 sm:h-22'>
 				<div className='absolute inset-0 flex items-center gap-2 justify-center bg-[#0f0f0fc2] z-10 opacity-0 hover:opacity-100'>
 					<FaPlay />
 					<p className='uppercase text-sm font-medium'>tümünü oynat</p>

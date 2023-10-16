@@ -9,7 +9,7 @@ interface ChannelProps {
 
 const Channel = ({ channel }: ChannelProps) => {
 	return (
-		<Link href={`/channel?id=${channel.id}`} className='w-full flex items-center justiy-between gap-2 cursor-pointer sm:gap-3'>
+		<Link href={`/channel?id=${channel.id}`} className='w-full flex flex-col items-center justiy-between gap-2 cursor-pointer sm:flex-row sm:gap-3'>
 			<div className='w-40 h-22 flex items-center justify-center sm:w-80 sm:h-44'>
 				<Image
 					src={channel.channel.thumbnail}

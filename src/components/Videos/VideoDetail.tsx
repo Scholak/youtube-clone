@@ -32,11 +32,11 @@ const VideoDetail = ({ video }: VideoDetailProps) => {
 						<p className='font-medium'>{video.channel.title}</p>
 						<p className='text-sm text-[#aaa]'>{video.channel.subscribers} abone</p>
 					</div>
-					<button className='h-full ml-8 flex items-center px-4 rounded-3xl bg-white text-dark-gray font-medium'>
+					<button className='h-full flex items-center px-4 rounded-3xl bg-white text-dark-gray font-medium whitespace-nowrap sm:ml-8'>
 						Abone ol
 					</button>
 				</div>
-				<div className='h-10 flex gap-2 text-sm'>
+				<div className='mb-10 h-10 flex flex-wrap gap-2 text-sm sm:flex-nowrap sm:mb-0'>
 					<div className='flex items-center gap-3 h-10 shrink-0 px-4 rounded-full bg-light-gray text-white'>
 						<button className='flex items-center gap-1'>
 							<svg

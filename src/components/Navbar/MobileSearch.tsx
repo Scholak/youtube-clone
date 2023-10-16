@@ -28,7 +28,7 @@ const MobileSearch = ({ setToggle }: MobileSearchProps) => {
 	}, [])
 
 	return (
-		<div className='fixed top-0 right-0 left-0 h-14 flex items-center gap-3 z-10 bg-gray px-4'>
+		<div className='fixed top-0 left-0 h-14 w-screen flex items-center gap-3 z-10 bg-gray px-4'>
 			<BsArrowLeft color='#F8F8F8' className='text-xl' onClick={() => setToggle(false)} />
 			<div className='flex-1 h-8 flex items-center gap-2 px-2 rounded-[32px] bg-light-gray'>
 				<input

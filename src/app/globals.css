@@ -26,3 +26,7 @@
 #videoDetailPlayer iframe {
   width: 100%;
 }
+
+#channelSectionsMenu::-webkit-scrollbar {
+  height: 0;
+}

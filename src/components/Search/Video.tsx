@@ -9,8 +9,8 @@ interface VideoProps {
 
 const Video = ({ video }: VideoProps) => {
 	return (
-		<Link href={`/watch?v=${video.id}`} className='w-full flex gap-2 cursor-pointer sm:gap-4'>
-			<div className='w-40 h-22 shrink-0 flex items-center justify-center rounded-lg overflow-hidden sm:w-80 sm:h-44'>
+		<Link href={`/watch?v=${video.id}`} className='w-full flex flex-col gap-2 cursor-pointer sm:flex-row sm:gap-4'>
+			<div className='w-full object-cover aspect-video shrink-0 flex items-center justify-center rounded-lg overflow-hidden sm:w-80 sm:h-44'>
 				<Image
 					src={video.thumbnail}
 					alt='channel thumbnail'

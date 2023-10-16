@@ -11,7 +11,7 @@ interface ChannelContentProps {
 
 const ChannelContent = ({ channel, pageToken }: ChannelContentProps) => {
 	return (
-		<div className='w-full text-white ml-[60px] lg:ml-[240px]'>
+		<div className='w-full mt-14 text-white overflow-x-hidden sm:ml-[60px] lg:ml-[240px]'>
 			<ChannelBanner banner={channel.banner} />
 			<ChannelDetail channel={channel} />
 			<ChannelSections />

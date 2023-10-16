@@ -12,8 +12,12 @@ const RelatedVideos = ({ video }: RelatedVideosProps) => {
 	return (
 		<div className='grid gap-2'>
 			{video.relatedVideos.data.map((video: any) => (
-				<Link key={video.id} href={{ pathname: '/watch', query: { v: video.id } }} className='w-[400px] flex gap-4'>
-					<div className='shrink-0 rounded-xl overflow-hidden w-[168px] h-[96px]'>
+				<Link
+					key={video.id}
+					href={{ pathname: '/watch', query: { v: video.id } }}
+					className='w-full flex flex-col gap-4 sm:flex-row sm:w-[400px]'
+				>
+					<div className='shrink-0 w-full object-cover aspect-video rounded-xl overflow-hidden sm:w-[168px] sm:h-[96px]'>
 						<Image
 							src={video.thumbnail}
 							alt='video thumbnail'

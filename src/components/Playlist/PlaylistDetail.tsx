@@ -21,7 +21,7 @@ const PlaylistDetail = ({ playlist }: PlaylistDetailProps) => {
 			</Link>
 			<div className='flex flex-col gap-4 justify-between'>
 				<h1 className='text-3xl font-bold'>{playlist.title}</h1>
-				<div className='flex items-center justify-between gap-2'>
+				<div className='flex flex-col items-center justify-between gap-2 sm:flex-row'>
 					<div className='flex items-center gap-2'>
 						<p>{playlist.channel.title}</p>
 						<span className='w-1 h-1 bg-white rounded-full'></span>

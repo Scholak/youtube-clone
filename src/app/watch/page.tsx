@@ -1,4 +1,4 @@
-import { WatchContent } from '@/components'
+import { Sidebar, WatchContent } from '@/components'
 import axios from 'axios'
 import { redirect } from 'next/navigation'
 import React from 'react'
@@ -27,7 +27,14 @@ const Watch = async ({searchParams}: WatchProps) => {
   try {
     const response = await axios.get(`${process.env.APP_URL}/api/videos/${searchParams.v}`)
 
-    return <WatchContent videoDetail={response.data.video} />
+    return (
+			<div className='flex sm:static'>
+				<div className='sm:hidden'>
+					<Sidebar />
+				</div>
+				<WatchContent videoDetail={response.data.video} />
+			</div>
+		)
   } catch (error: any) {
     redirect('/')
   }
