@@ -26,6 +26,14 @@
 - Channel detail page with banner, channel info and related videos
 - Responsive design
 
+## Installation Guide
+- clone the project &nbsp; `git clone https://github.com/Scholak/youtube-clone.git`
+- install dependencies &nbsp; `npm install` &nbsp; or &nbsp; `yarn install` 
+- create `.env` file and paste `.env.example` file content
+- define environment variables (APP_URL, NEXT_PUBLIC_APP_URL, YOUTUBE_API_KEY)
+- run `yarn dev` &nbsp; or &nbsp; `npm run dev`
+- visit http://localhost:3000
+
 ## Project Images
 ![](./assets/1.png)
 <br>
