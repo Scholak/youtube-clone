@@ -63,6 +63,9 @@
 <br>
 <br>
 ![](./assets/10.png)
-
-## Project Demo
-https://github.com/Scholak/youtube-clone/assets/70487430/d3e38a4f-b677-44ab-8148-772e4a669fbe
+<br>
+<br>
+![](./assets/11.png)
+<br>
+<br>
+![](./assets/12.png)
