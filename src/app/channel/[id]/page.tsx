@@ -4,22 +4,22 @@ import { redirect } from 'next/navigation'
 import React from 'react'
 
 interface ChannelProps {
-	searchParams: {
+	params: {
 		id: string
 	}
 }
 
-export async function generateMetadata({ searchParams }: ChannelProps) {
-	const response = await axios.get(`${process.env.APP_URL}/api/channels/${searchParams.id}`)
+export async function generateMetadata({ params }: ChannelProps) {
+	const response = await axios.get(`${process.env.APP_URL}/api/channels/${params.id}`)
 
 	return {
-		title: response.data.channel.title
+		title: response.data.channel.title,
 	}
 }
 
-const Channel = async ({ searchParams }: ChannelProps) => {
+const Channel = async ({ params }: ChannelProps) => {
 	try {
-		const response = await axios.get(`${process.env.APP_URL}/api/channels/${searchParams.id}`)
+		const response = await axios.get(`${process.env.APP_URL}/api/channels/${params.id}`)
 
 		return (
 			<div className='flex'>
