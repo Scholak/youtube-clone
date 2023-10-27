@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@media screen and (min-width: 1200px) and (max-width: 1600px) {
+  body {
+    zoom: 0.75
+  }
+}
+
 ::-webkit-scrollbar {
   width: 16px;
 }
