@@ -12,12 +12,6 @@ export const mySubscribers: ISubscriber[] = [
 		thumbnail: 'https://yt3.ggpht.com/ytc/APkrFKb5Ricu_qctZxjKhtZVzJ2-fvszhON5DhfDG1Nupw=s88-c-k-c0x00ffffff-no-rj',
 	},
 	{
-		id: 'UCz6xwevB88lLD0PoQobvcOg',
-		title: 'Mehmet Pekcan',
-		thumbnail:
-			'https://yt3.ggpht.com/S6RMjx9M8HN9fkbBPSPxszaRB2ZguPQe1ZBaRGOYcTbE3bI4jMOvF-m4y1gPFEPyDIUeSFOifeE=s88-c-k-c0x00ffffff-no-rj',
-	},
-	{
 		id: 'UCW_4e6sUTMWHxlF06aErH9w',
 		title: 'Code With Antonio',
 		thumbnail:
