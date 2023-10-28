@@ -46,8 +46,8 @@ const ChannelVideos = ({ defaultVideos, initialPageToken, channel }: ChannelVide
 
 	return (
 		<div className='mt-12 grid gap-6 px-10 sm:px-20 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'>
-			{videos.map((video: any) => (
-				<ChannelVideo key={video.id} video={video} channel={channel} />
+			{videos.map((video: any, idx: number) => (
+				<ChannelVideo key={idx} video={video} channel={channel} />
 			))}
 			<span className='text-transparent'>{videos.length && !isFetching && <div ref={ref}></div>}</span>
 		</div>
