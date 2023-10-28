@@ -21,7 +21,7 @@ const Video = ({video}: VideoProps) => {
 			</div>
 			<div className='flex items-start gap-2'>
 				<div className='shrink-0 w-10 h-10 rounded-full overflow-hidden'>
-					<Link href={`/channel?id=${video.channel.id}`}>
+					<Link href={`/channel/${video.channel.id}`}>
 						<Image
 							src={video.channel.thumbnail}
 							alt='channel thumbnail'
