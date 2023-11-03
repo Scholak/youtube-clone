@@ -8,7 +8,7 @@ interface RootProviderProps {
 }
 
 // Windows 11 overflow issue solution
-if (typeof screen !== 'undefined' && screen.width > 1200 && screen.width < 2800) {
+if (typeof screen !== 'undefined' && screen.width > 1200 && screen.width < 1800) {
 	const main = document.querySelector('main')
 	
 	if (main) {
