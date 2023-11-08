@@ -33,7 +33,7 @@
 }
 
 /* Windows 11 overflow issue solution */
-@media screen and (width: 1396.36px) {
+@media screen and (width: 1536px) {
   body {
     zoom: 0.75;
   }
