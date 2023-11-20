@@ -19,7 +19,7 @@ const VideoDetail = ({ video }: VideoDetailProps) => {
 			<p className='my-2 text-2xl font-semibold'>{video.detail.title}</p>
 			<div className='mb-4 flex flex-col gap-4 justify-between lg:flex-row lg:items-center'>
 				<div className='h-10 flex items-start gap-3'>
-					<Link href={`/channel?id=${video.channel.id}`}>
+					<Link href={`/channel/${video.channel.id}`}>
 						<Image
 							src={video.channel.thumbnail}
 							alt='channel thumbnail'
